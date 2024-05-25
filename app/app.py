@@ -55,14 +55,11 @@ def convert_population(population):
 st.title('Gapminder Data Dashboard')
 st.write('This dashboard displays data for Population, Life Expectancy, and GNI per Capita.')
 
-# Upload the CSV files
 population_file = st.file_uploader('Upload Population CSV', type='csv')
 life_expectancy_file = st.file_uploader('Upload Life Expectancy CSV', type='csv')
 gni_per_capita_file = st.file_uploader('Upload GNI per Capita CSV', type='csv')
 
-# Ensure all files are uploaded
 if population_file and life_expectancy_file and gni_per_capita_file:
-    # Load and preprocess the data
     data = load_and_preprocess_data(population_file, life_expectancy_file, gni_per_capita_file)
     
     # Convert year to integer for proper slider functionality
